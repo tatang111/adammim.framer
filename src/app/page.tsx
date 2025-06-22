@@ -22,13 +22,13 @@ import emailjs from "emailjs-com";
 import { toast } from "sonner";
 
 const schema = z.object({
-  username: z.string().nonempty("Required"),
-  email: z.string().email("Email is invalid").nonempty("Required"),
-  phone: z.string(),
+  username: z.string().nonempty("Username is required"),
+  email: z.string().email("Email is invalid").nonempty("email is required"),
+  phone: z.string().nonempty("Phone number is required"),
   service: z.enum(["graphic-design", "mockup", "ui-design", "video-editing"], {
     required_error: "Please select one",
   }),
-  message: z.string().nonempty("Required"),
+  message: z.string().nonempty("message is required"),
 });
 
 type Schema = z.infer<typeof schema>;
