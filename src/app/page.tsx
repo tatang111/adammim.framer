@@ -19,6 +19,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const schema = z.object({
   username: z.string().nonempty("Username is required"),
@@ -33,6 +34,8 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>;
 
 export default function Home() {
+  const router = useRouter()
+
   const form = useForm<Schema>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -87,7 +90,7 @@ export default function Home() {
         <h1 className="text-white font-bold text-2xl md:text-3xl">
           Send Email to Adam!
         </h1>
-        <Button className="bg-[#FEBC5C] hover:bg-[#FEBC5C] w-50 md:w-auto cursor-pointer text-lg text-black font-bold">
+        <Button onClick={() => router.push("https://adammim.framer.website/")} className="bg-[#FEBC5C] hover:bg-[#FEBC5C] w-50 md:w-auto cursor-pointer text-lg text-black font-bold">
           Back to portofolio
         </Button>
       </header>
