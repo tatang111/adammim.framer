@@ -60,7 +60,7 @@ export default function Home() {
         minute: "2-digit",
       });
 
-      const result = await emailjs.send(
+      await emailjs.send(
         "service_yzphn4f",
         "template_1ybhjgg",
         {
@@ -94,7 +94,7 @@ export default function Home() {
       <main className="flex flex-col lg:flex-row gap-6 flex-1 md:-mt-2">
         <div className="w-full lg:w-1/2 rounded-lg flex flex-col gap-4 bg-[#C2B6B6] py-6 px-5">
           <h3 className="text-black font-bold text-xl md:text-2xl">
-            Let's start to realize your dream project
+            {"Let's"} start to realize your dream project
           </h3>
           <p className="text-base font-[550]">
             Bring your brilliant ideas to life with us to create a visually
