@@ -1,6 +1,5 @@
 "use client";
 
-import InputSection from "@/components/InputSection";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
